@@ -1,5 +1,5 @@
 /*  estilos globais */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,53 +8,56 @@
     text-decoration: none;
 }
 
-body{
+body {
     width: 100vw;
     min-height: 100vh;
     background-image: url(background.jpg);
     background-repeat: no-repeat;
-    background-position:  center bottom;
+    background-position: center bottom;
     background-size: cover;
     overflow: hidden;
 }
+
 /* fim estilos globais */
 
+
 /*  cabeçalho */
-.cabecalho{
+.cabecalho {
     width: 100vw;
 }
 
-.interface-cabecalho{
+.interface-cabecalho {
     width: 100%;
     display: flex;
     padding: 30px 8% 0px 8%;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
-.interface-cabecalho h1{
+.interface-cabecalho h1 {
     color: #fff;
 }
 
-.lista-menu{
+/* menu desktop */
+.lista-menu {
     display: flex;
     gap: 50px;
 }
 
-.lista-menu ul{
+.lista-menu ul {
     display: flex;
     gap: 50px;
     align-items: center;
 }
 
-.lista-menu ul li a{
+.lista-menu ul li a {
     position: relative;
     color: #fff;
     font-size: 20px;
 }
 
-.lista-menu ul li a::after{
+.lista-menu ul li a::after {
     content: '';
     position: absolute;
     left: 0px;
@@ -67,12 +70,12 @@ body{
     transition: transform .5s ease;
 }
 
-.lista-menu ul li a:hover::after{
+.lista-menu ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: center;
 }
 
-.lista-menu .btn-menu{
+.lista-menu .btn-menu {
     color: #fff;
     font-size: 15px;
     width: 120px;
@@ -85,15 +88,79 @@ body{
     transition: background-color .9s ease;
 }
 
-.lista-menu .btn-menu:hover{
+.lista-menu .btn-menu:hover {
     background-color: #fff;
     color: #000;
 }
-/* fim cabeçalho */ 
+
+
+/* menu mobile */
+.open-mobile-menu {
+    display: none;
+}
+
+.open-mobile-menu i {
+    font-size: 40px;
+    cursor: pointer;
+    color: #000;
+}
+
+.menu-mobile {
+    background-color: #000a11;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    width: 0%;
+    top: 0;
+    right: 0;
+    transition: .5s;
+}
+
+.menu-mobile.active-menu {
+    width: 70%;
+}
+
+.menu-mobile.active-menu~.overlay-menu {
+    display: block;
+}
+
+.close-mobile-menu {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.close-mobile-menu i {
+    color: #fff;
+    font-size: 35px;
+}
+
+.lista-menu-mobile ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+.overlay-menu {
+    background-color: #000000a1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+    display: none;
+}
+
 
 
 /* formulário de login */
-.main-form{
+.main-form {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -101,7 +168,7 @@ body{
     align-items: center;
 }
 
-.interface-form{
+.interface-form {
     position: relative;
     border: 1.8px solid #fff;
     width: 400px;
@@ -113,39 +180,44 @@ body{
     box-shadow: 0px 0px 10px #00000086;
 }
 
-.interface-form.show-Form{
+
+/* animação do formulário de login */
+.interface-form.show-Form {
     display: flex;
     animation: show-form .8s ease-in-out;
 }
 
-@keyframes show-form{
-    0%{
+@keyframes show-form {
+    0% {
         opacity: 0;
         transform: translateX(50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-.interface-form.hide-Form{
+.interface-form.hide-Form {
     display: flex;
     animation: hide-form .8s ease-in-out;
 }
-@keyframes hide-form{
-    0%{
+
+@keyframes hide-form {
+    0% {
         opacity: 1;
         transform: translateX(0);
     }
-    100%{
+
+    100% {
         opacity: 0;
         transform: translateX(-50%);
     }
 }
 
 
-.interface-form #close{
+.interface-form #close {
     font-size: 20px;
     position: absolute;
     right: 1px;
@@ -158,25 +230,27 @@ body{
     transition: background-color .7s ease;
 }
 
-.interface-form #close:hover{
+.interface-form #close:hover {
     background-color: #203e55;
 }
 
-.interface-form h1{
+.interface-form h1 {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.interface-form form{
+.interface-form form {
     width: 100%;
-    height: 100%;;
+    height: 100%;
+    ;
 }
-.container-form{
+
+.container-form {
     display: flex;
     position: relative;
 }
 
-.container-form i{
+.container-form i {
     color: #162938;
     position: absolute;
     right: 2px;
@@ -185,7 +259,7 @@ body{
     font-size: 20px;
 }
 
-.group-form{
+.group-form {
     width: 100%;
     padding: 10px 3px;
     background-color: transparent;
@@ -193,29 +267,32 @@ body{
     outline: none;
     border-bottom: 1px solid #162938;
 }
-.group-form::placeholder{
+
+.group-form::placeholder {
     color: #162938;
 }
-.container-password{
+
+.container-password {
     margin-bottom: 30px;
 }
 
-.remember-forgot{
+.remember-forgot {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
 }
 
-.remember input[type= "checkbox"]{
+.remember input[type="checkbox"] {
     accent-color: #162938;
 }
-.remember label{
+
+.remember label {
     color: #162938;
     font-size: 14px;
-    
+
 }
 
-.remember-forgot a{
+.remember-forgot a {
     position: relative;
     color: #162938;
 }
@@ -233,12 +310,12 @@ body{
     transition: transform .5s ease;
 }
 
-.remember-forgot a:hover::after{
+.remember-forgot a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-.btn-login{
+.btn-login {
     width: 100%;
     margin-top: 15px;
     padding: 15px 0;
@@ -251,21 +328,22 @@ body{
     transition: background-color .7s ease;
 }
 
-.btn-login:hover{
+.btn-login:hover {
     background-color: #203e55;
 }
 
-.register{
+.register {
     text-align: center;
     margin-top: 20px;
     color: #162938;
 }
-.register a{
+
+.register a {
     color: #000a11;
     position: relative;
 }
 
-.register a::after{
+.register a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -278,10 +356,44 @@ body{
     transition: transform .5s ease;
 }
 
-.register a:hover::after{
+.register a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
 /* fim formulário de login */
 
+
+/* responsividade para tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .interface-form {
+        width: 350px;
+    }
+    
+    .menu-mobile.active-menu {
+        width: 50%;
+    }
+    .open-mobile-menu {
+        display: block;
+    }
+
+    .lista-menu {
+        display: none;
+    }
+}
+
+
+/* responsividade para smartphones */
+@media screen and (max-width: 767px) {
+
+    .interface-form {
+        width: 90%;
+    }
+    .open-mobile-menu {
+        display: block;
+    }
+
+    .lista-menu {
+        display: none;
+    }
+}
