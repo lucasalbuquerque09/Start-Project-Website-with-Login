@@ -18,6 +18,35 @@ body {
     background-position: bottom center;
     background-repeat: no-repeat;
 }
+
+a,
+button,
+input,
+i{
+    -webkit-tap-highlight-color: transparent;
+}
+a:focus,
+a:active,
+button:focus,
+button:active,
+input:focus,
+input:active,
+i:focus,
+i:active{
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    /* Mantem o visual original do campo mesmo com sugestoes/autofill do navegador */
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: #162938 !important;
+    caret-color: #162938;
+    transition: background-color 9999s ease-out 0s;
+}
 /* fim estilo global */
 
 /* cabeçalho */
@@ -189,12 +218,14 @@ body {
     border: none;
     outline: none;
     padding: 0 35px 0 5px;
+    font-size: 16px;
+
 }
 .group-input i {
     position: absolute;
     right: 5px;
     color: #162938;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 57px;
     cursor: pointer;
 }
@@ -267,6 +298,7 @@ body {
         justify-content: center;
         align-items: center;
         padding-top: 70px;
+        background-position: center center;
     }
 
     .menu-desktop a {
