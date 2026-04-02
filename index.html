@@ -15,83 +15,107 @@
 <body>
     <!-- cabeçalho -->
     <header class="cabecalho">
-        <div class="interface-cabecalho">
-            <h1>Logo</h1>
-            <nav class="lista-menu">
-                <ul>
-                    <li><a href="#" title="Home">Home</a></li>
-                    <li><a href="#" title="About">About</a></li>
-                    <li><a href="#" title="Services">Services</a></li>
-                    <li><a href="#" title="Contact">Contact</a></li>
-                </ul>
-                <button class="btn-menu" type="submit">Login</button>
-            </nav>
-
-            <!-- menu mobile -->
-            <div class="open-mobile-menu">
-                <i id="open-mobile" class="bi bi-list"></i>
-            </div>
-
-            <div class="menu-mobile">
-                <div class="close-mobile-menu">
-                    <i class="bi bi-x-lg"></i>
-                </div>
-
-                <nav class="lista-menu-mobile">
-                    <ul>
-                        <li><a href="#" title="Home">Home</a></li>
-                        <li><a href="#" title="About">About</a></li>
-                        <li><a href="#" title="Services">Services</a></li>
-                        <li><a href="#" title="Contact">Contact</a></li>
-                        <li><a href="#" title="Login" id="link-menu">Login</a></li>
-                    </ul>
-                    
-                </nav>
-
-            </div>
-
-            <div class="overlay-menu" id="overlay"></div>
-
-        </div>
+            
+        <h2>Logo</h2>
+            
+        <nav class="menu-desktop">
+                
+            <a href="#" title="Home">Home</a>
+            <a href="#" title="About">About</a>
+            <a href="#" title="Services">Services</a>
+            <a href="#" title="Contact">Contact</a>
+                
+            <button class="btn-menu" type="submit">Login</button>
+            
+        </nav>
+   
     </header>
-
+    <!-- fim cabeçalho -->
+    
     <!-- formulário de login -->
     <div class="main-form">
-
-        <div class="interface-form">
-
-            <i id="close" class="bi bi-x-lg"></i>
-
+        
+        <!-- ícone de fechar -->
+        <span class="icon-close">
+            <i  class="bi bi-x-lg"></i>
+        </span>
+        <!-- fim ícone de fechar -->
+        
+        <!-- formulário de login -->
+        <div class="container-form login">
             <h1>Login</h1>
-
-            <form action="#" method="post">
-
-                <div class="container-form container-password">
-                    <input class="group-form" type="text" name="email" id="email" placeholder="Email" required autocomplete="off">
-                    <i class="bi bi-person-fill"></i>
+            
+            <form action="#" method="post" autocomplete="off">
+                
+                <div class="group-input">
+                    <input type="text" name="email" id="email"required autocomplete="off">
+                    <label for="email">Email</label>
+                    <i class="bi bi-envelope-fill"></i>
                 </div>
-                <div class="container-form ">
-                    <input class="group-form " type="password" name="senha" id="senha" placeholder="Password" required autocomplete="off">
-                    <i id="btn-senha" class="bi bi-eye-fill"></i>
+            
+                <div class="group-input">
+                    <input type="password" name="senha" id="senha" required autocomplete="off">
+                    <label for="senha">Password</label>
+                    <i id="btn-senha-login" class="bi bi-eye-fill"></i>
                 </div>
-
+                
                 <div class="remember-forgot">
-                    <div class="remember">
-                        <input type="checkbox" name="remember" id="remember">
-                        <label for="remember">Remember me</label>
-                    </div>
+                    <label><input type="checkbox" name="remember" id="remember"> Remember me</label>
+                    
                     <a href="#">Forgot Password?</a>
                 </div>
-
+                
                 <button class="btn-login" type="submit">Login</button>
-
+                
                 <p class="register">
-                    Don't have an account? <a href="#">Register</a>
+                    Don't have an account? <a class="register-link" href="#">Register</a>
                 </p>
             </form>
         </div>
+        <!-- fim formulário de login -->
+
+        <!-- formulário de registro -->
+        <div class="container-form register">
+            
+            <h1>Registration</h1>
+            
+            <form action="#" method="post" autocomplete="off">
+
+                <div class="group-input">
+                    <input type=" text" name="username" id="username"required autocomplete="off">
+                    <label for="username">Username</label>
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                
+                <div class="group-input">
+                    <input type="email" name="email" id="email"required autocomplete=" off">
+                    <label for="email">Email</label>
+                    <i class="bi bi-envelope-fill"></i>
+                </div>
+            
+                <div class="group-input">
+                    <input type="password" name="senha" id="senha-register" required autocomplete="off">
+                    <label for="senha-register">Password</label>
+                    <i id="btn-senha-register" class="bi bi-eye-fill"></i>
+                </div>
+                
+                <div class="remember-forgot">
+                    <label><input type="checkbox" name="terms" id="terms"> I agree to the terms and conditions</label>
+                </div>
+                
+                <button class="btn-login" type="submit">Register</button>
+                
+                <p class="register">
+                    Already have an account? <a class="login-link" href="#">Login</a>
+                </p>
+            </form>
+        
+        </div>
+        <!-- fim formulário de registro -->
     </div>
+    
     <script src="script.js"></script>
+
 </body>
 
 </html>
